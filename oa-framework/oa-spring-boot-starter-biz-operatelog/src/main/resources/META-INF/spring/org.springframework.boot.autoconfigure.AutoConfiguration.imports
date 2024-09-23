@@ -1,0 +1,2 @@
+com.lh.oa.framework.operatelog.config.OaOperateLogAutoConfiguration
+com.lh.oa.framework.operatelog.config.OaOperateLogRpcAutoConfiguration

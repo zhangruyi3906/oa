@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lh.oa.module.system.mapper.BaseRegionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lh.oa.module.system.dal.dataobject.baseRegion.BaseRegion">
+        <id column="id" property="id" />
+        <result column="parent_id" property="parentId" />
+        <result column="short_name" property="shortName" />
+        <result column="name" property="name" />
+        <result column="merger_name" property="mergerName" />
+        <result column="level" property="level" />
+        <result column="pinyin" property="pinyin" />
+        <result column="code" property="code" />
+        <result column="zip_code" property="zipCode" />
+        <result column="first" property="first" />
+        <result column="lng" property="lng" />
+        <result column="lat" property="lat" />
+    </resultMap>
+    <select id="selectAll" resultType="com.lh.oa.module.system.dal.dataobject.baseRegion.BaseRegion">
+        select *
+        from base_region;
+    </select>
+
+</mapper>

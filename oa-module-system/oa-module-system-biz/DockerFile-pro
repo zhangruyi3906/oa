@@ -1,0 +1,8 @@
+FROM openjdk:8
+VOLUME /tmp
+COPY target/oa-module-system-biz.jar oa-module-system-biz.jar
+COPY yearsDate.txt /home/oa/
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN bash -c "touch /oa-module-system-biz.jar"
+ENTRYPOINT ["java", "-jar", "-Xms128m", "-Xmx512m", "oa-module-system-biz.jar", "--spring.profiles.active=pro"]

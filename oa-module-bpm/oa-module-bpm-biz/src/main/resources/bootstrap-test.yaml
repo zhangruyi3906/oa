@@ -1,0 +1,33 @@
+--- # 注册中心
+spring:
+  cloud:
+    nacos:
+      server-addr: 192.168.2.200:8848
+      discovery:
+        namespace:
+        metadata:
+          version: 1.0.0
+
+--- # 配置中心
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.2.200:8848
+        namespace:
+        group: DEFAULT_GROUP
+        name: ${spring.application.name}
+        file-extension: yaml
+post:
+  sale:
+    platform-url: http://192.168.2.200:7082
+    access_token: /auth/token
+    username: admin
+    password: 123456
+    grant_type: oa_token_password
+    client: OA
+    sync-user: /oa/user
+    erp-inventory: /warehouse/material/inventory/list   #库存
+    erp-warehouse: /warehouse/list                      #仓库
+    order_list: /post/sale/order/finishedOrderList                    #仓库
+    todo-message: /api/task/todo/message

@@ -1,0 +1,2 @@
+com.lh.oa.framework.idempotent.config.OaIdempotentConfiguration
+com.lh.oa.framework.lock4j.config.OaLock4jConfiguration

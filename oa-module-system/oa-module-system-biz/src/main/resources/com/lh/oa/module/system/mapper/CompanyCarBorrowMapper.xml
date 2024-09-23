@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lh.oa.module.system.mapper.CompanyCarBorrowMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lh.oa.module.system.dal.dataobject.companyCarBorrow.CompanyCarBorrowRes">
+        <id column="id" property="id" />
+        <result column="car_id" property="carId" />
+        <result column="user_id" property="userId" />
+        <result column="username" property="username" />
+        <result column="borrowed_time" property="borrowedTime" />
+        <result column="return_time" property="returnTime" />
+        <result column="expect_time" property="expectTime" />
+        <result column="borrow_reason" property="borrowReason" />
+        <result column="approver_id" property="approverId" />
+        <result column="approver_name" property="approverName" />
+        <result column="process_instance_id" property="processInstanceId" />
+        <result column="opinion" property="opinion" />
+        <result column="deleted" property="deleted" />
+        <result column="tenant_id" property="tenantId" />
+        <association property="companyCar" javaType="com.lh.oa.module.system.api.companyCar.CompanyCar">
+            <id property="id" column="id"></id>
+            <result column="plate_number" property="plateNumber" ></result>
+            <result column="brand" property="brand" ></result>
+            <result column="model" property="model" ></result>
+            <result column="color" property="color" ></result>
+            <result column="type" property="type" ></result>
+            <result column="purchase_date" property="purchaseDate" ></result>
+            <result column="policy_number" property="policyNumber" ></result>
+            <result column="car_condition" property="carCondition" ></result>
+            <result column="status" property="status" ></result>
+            <result column="deleted" property="deleted" ></result>
+            <result column="tenant_id" property="tenantId" ></result>
+        </association>
+    </resultMap>
+
+
+    <select id="selectCompanyCarBorrowList" resultMap="BaseResultMap">
+        select ccb.*,cc.plate_number, cc.model, cc.car_condition,cc.policy_number, cc.status, cc.color, cc.purchase_date,cc.brand,cc.type
+        from company_car_borrow ccb left join company_car cc on cc.id = ccb.car_id;
+    </select>
+
+    <select id="selectCompanyCarBorrow" resultMap="BaseResultMap">
+        select ccb.*,cc.plate_number, cc.model, cc.car_condition,cc.policy_number, cc.status, cc.color, cc.purchase_date,cc.brand,cc.type
+        from company_car_borrow ccb left join company_car cc on cc.id = ccb.car_id where ccb.id = #{id};
+    </select>
+
+
+</mapper>

@@ -1,0 +1,24 @@
+--- # 注册中心
+spring:
+  cloud:
+    nacos:
+      server-addr: 123.249.4.3:8848
+      discovery:
+        username: nacos
+        password:
+        namespace: 51344797-812f-4d6d-8317-5fa7e7be9f85
+        metadata:
+          version: 1.0.0
+
+--- # 配置中心
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 123.249.4.3:8848
+        username: nacos
+        password:
+        namespace: 51344797-812f-4d6d-8317-5fa7e7be9f85
+        group: DEFAULT_GROUP
+        name: ${spring.application.name}
+        file-extension: yaml

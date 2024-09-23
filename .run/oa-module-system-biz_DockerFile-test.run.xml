@@ -1,0 +1,28 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="oa-module-system-biz/DockerFile-test" type="docker-deploy" factoryName="dockerfile" server-name="192.168.2.200-Docker-test">
+    <deployment type="dockerfile">
+      <settings>
+        <option name="imageTag" value="lh-oa-system" />
+        <option name="containerName" value="lh-oa-system" />
+        <option name="portBindings">
+          <list>
+            <DockerPortBindingImpl>
+              <option name="containerPort" value="48081" />
+              <option name="hostPort" value="48081" />
+            </DockerPortBindingImpl>
+          </list>
+        </option>
+        <option name="sourceFilePath" value="oa-module-system/oa-module-system-biz/DockerFile-test" />
+        <option name="volumeBindings">
+          <list>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/home/oa/logs" />
+              <option name="hostPath" value="/home/oa/logs" />
+            </DockerVolumeBindingImpl>
+          </list>
+        </option>
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>

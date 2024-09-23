@@ -1,0 +1,3 @@
+com.lh.oa.framework.security.config.OaSecurityAutoConfiguration
+com.lh.oa.framework.security.config.OaSecurityRpcAutoConfiguration
+com.lh.oa.framework.security.config.OaWebSecurityConfigurerAdapter

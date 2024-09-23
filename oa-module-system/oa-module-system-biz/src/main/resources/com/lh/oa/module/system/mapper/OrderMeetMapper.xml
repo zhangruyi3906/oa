@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lh.oa.module.system.mapper.OrderMeetMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lh.oa.module.system.dal.dataobject.orderMeet.OrderMeet">
+        <id column="id" property="id" />
+        <result column="room_id" property="roomId" />
+        <result column="room_name" property="roomName" />
+        <result column="meet_start_time" property="meetStartTime" />
+        <result column="meet_end_time" property="meetEndTime" />
+        <result column="order_date" property="orderDate" />
+        <result column="title" property="title" />
+        <result column="description" property="description" />
+        <result column="user_id" property="userId" />
+        <result column="username" property="username" />
+        <result column="status" property="status" />
+        <result column="deleted" property="deleted" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="creator" property="creator" />
+        <result column="updater" property="updater" />
+    </resultMap>
+    <select id="selectByRoomId" resultType="com.lh.oa.module.system.dal.dataobject.orderMeet.OrderMeet">
+        select * from order_meet where room_id = #{roomId}
+    </select>
+
+</mapper>

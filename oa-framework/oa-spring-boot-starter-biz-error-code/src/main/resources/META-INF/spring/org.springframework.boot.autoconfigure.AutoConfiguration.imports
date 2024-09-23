@@ -1,0 +1,2 @@
+com.lh.oa.framework.errorcode.config.OaErrorCodeAutoConfiguration
+com.lh.oa.framework.errorcode.config.OaErrorCodeRpcAutoConfiguration

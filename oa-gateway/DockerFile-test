@@ -1,0 +1,7 @@
+FROM openjdk
+VOLUME /tmp
+COPY target/oa-gateway.jar oa-gateway.jar
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN bash -c "touch /oa-gateway.jar"
+ENTRYPOINT ["java", "-jar", "-Xms128m", "-Xmx512m", "oa-gateway.jar", "--spring.profiles.active=test"]

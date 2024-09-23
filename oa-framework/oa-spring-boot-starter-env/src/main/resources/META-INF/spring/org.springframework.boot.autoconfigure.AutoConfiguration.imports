@@ -1,0 +1,2 @@
+com.lh.oa.framework.env.config.OaEnvWebAutoConfiguration
+com.lh.oa.framework.env.config.OaEnvRpcAutoConfiguration

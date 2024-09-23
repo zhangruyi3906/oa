@@ -1,0 +1,85 @@
+--- # 注册中心
+spring:
+  cloud:
+    nacos:
+      server-addr: 47.109.89.50:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: ea6a3182-ca27-4593-8acd-7d86f7284837
+        metadata:
+          version: 1.0.0
+
+--- # 配置中心
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 47.109.89.50:8848
+        username: nacos
+        password: nacos
+        namespace: ea6a3182-ca27-4593-8acd-7d86f7284837
+        group: DEFAULT_GROUP
+        name: ${spring.application.name}
+        file-extension: yaml
+
+---
+oa:
+  legal:
+    holiday:
+      url: /home/oa/yearsDate.txt
+
+---
+jnt:
+  platform-url: http://v1.2.tunnelprj.com/api
+  app-access-token: /oauth/token
+  app-id: 3e7d983ab8c98d681c5dadfb21662532
+  app-secret: c8903b24b7cdbc9504840154eec1e491
+  client: OA
+  grant-type: oa_token
+  aes-key: MmViNDI5YzY3NjY4MWE3YmY1YWU4NzAyYWE3NjgzNjM=
+  sync-project-api: /project
+  sync-org-api: /sys/org
+  sync-dept-api: /sys/dept
+  sync-post-api: /sys/post
+  sync-user-api: /sys/user
+  sync-user-project-api: /sys/user/project/related/info
+  sync-user-state-api: /sys/user/update/state
+  query-user-byOa-api: /sys/user/getByOaUserId
+  query-project-api: /project/system/list
+  query-projectByIds-api: /project/system/getNameMapByIds
+  query-material-by-project-api: /warehouse/material/basic/info/list/by/project
+  material-storage: /warehouse/storage/fromOA
+  query-warehouse-by-project-api: /warehouse/basic/info/by/projectId
+  record-remind-url: /oa/attendance/pushRemindMessage
+
+post:
+  sale:
+    platform-url: https://postsale.tunnelprj.com/api
+    access_token: /auth/token
+    username: admin
+    password: lanhai882023
+    grant_type: oa_token_password
+    client: OA
+    sync-user: /oa/user
+    erp-inventory: /warehouse/material/inventory/list   #库存
+    erp-warehouse: /warehouse/list                      #仓库
+    order_list: /post/sale/order/finishedOrderList                    #仓库
+    todo-message: /api/task/todo/message
+#信息化系统
+information:
+  pre_url: http://47.109.102.99:5300
+  oauth_token: /auth/login                           #授权
+  warehouse: /erp/stock                              #仓库列表
+  warehouse_material: /erp/material                  #物料列表
+  username: xntd
+  password: lanhai@Xntd=2023
+  header_name1: X-Grant-Client
+  header_value1: xntd
+  auth_token_validity_seconds: 7200
+  post_sale_customer: /erp/sale/data/customer
+  post_sale_man: /erp/sale/data/sale/man
+
+---
+kk:
+  server: http://p.tunnelprj.com:7012/onlinePreview

@@ -1,0 +1,2 @@
+com.lh.oa.framework.quartz.config.OaXxlJobAutoConfiguration
+com.lh.oa.framework.quartz.config.OaAsyncAutoConfiguration

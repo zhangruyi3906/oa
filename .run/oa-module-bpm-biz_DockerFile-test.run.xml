@@ -1,0 +1,28 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="oa-module-bpm-biz/DockerFile-test" type="docker-deploy" factoryName="dockerfile" server-name="192.168.2.200-Docker-test">
+    <deployment type="dockerfile">
+      <settings>
+        <option name="imageTag" value="lh-oa-bpm" />
+        <option name="containerName" value="lh-oa-bpm" />
+        <option name="portBindings">
+          <list>
+            <DockerPortBindingImpl>
+              <option name="containerPort" value="48083" />
+              <option name="hostPort" value="48083" />
+            </DockerPortBindingImpl>
+          </list>
+        </option>
+        <option name="sourceFilePath" value="oa-module-bpm/oa-module-bpm-biz/DockerFile-test" />
+        <option name="volumeBindings">
+          <list>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/home/oa/logs/" />
+              <option name="hostPath" value="/home/oa/logs" />
+            </DockerVolumeBindingImpl>
+          </list>
+        </option>
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>

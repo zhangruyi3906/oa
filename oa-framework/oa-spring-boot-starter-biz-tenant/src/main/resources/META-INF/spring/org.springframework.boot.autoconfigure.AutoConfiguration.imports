@@ -1,0 +1,3 @@
+com.lh.oa.framework.tenant.config.OaTenantAutoConfiguration
+com.lh.oa.framework.tenant.config.OaTenantMQAutoConfiguration
+com.lh.oa.framework.tenant.config.OaTenantRpcAutoConfiguration

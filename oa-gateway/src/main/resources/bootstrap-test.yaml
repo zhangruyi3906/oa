@@ -1,0 +1,19 @@
+--- # 注册中心
+spring:
+  cloud:
+    nacos:
+      server-addr: 192.168.2.200:8848
+      discovery:
+        namespace:
+        metadata:
+          version: 1.0.0
+--- # 配置中心
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.2.200:8848
+        namespace:
+        group: DEFAULT_GROUP
+        name: ${spring.application.name}
+        file-extension: yaml

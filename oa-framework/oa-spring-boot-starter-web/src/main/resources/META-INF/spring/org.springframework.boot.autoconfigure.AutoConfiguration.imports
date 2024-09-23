@@ -1,0 +1,5 @@
+com.lh.oa.framework.apilog.config.OaApiLogAutoConfiguration
+com.lh.oa.framework.apilog.config.OaApiLogRpcAutoConfiguration
+com.lh.oa.framework.jackson.config.OaJacksonAutoConfiguration
+com.lh.oa.framework.swagger.config.OaSwaggerAutoConfiguration
+com.lh.oa.framework.web.config.OaWebAutoConfiguration

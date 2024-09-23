@@ -1,0 +1,1 @@
+dubboExceptionFilter=dubbo.core.rpc.com.lh.oa.framework.DubboProviderExceptionFilter

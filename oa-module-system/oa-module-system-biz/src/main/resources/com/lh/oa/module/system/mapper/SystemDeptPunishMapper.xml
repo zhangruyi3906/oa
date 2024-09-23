@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lh.oa.module.system.mapper.SystemDeptPunishMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lh.oa.module.system.dal.dataobject.systemDeptPunish.SystemDeptPunish">
+        <id column="id" property="id" />
+        <result column="dept_id" property="deptId" />
+        <result column="dept_name" property="deptName" />
+        <result column="late_penalty" property="latePenalty" />
+        <result column="leave_early_penalty" property="leaveEarlyPenalty" />
+        <result column="miss_signature_penalty" property="missSignaturePenalty" />
+        <result column="excused_penalty" property="excusedPenalty" />
+        <result column="retirement_scale" property="retirementScale" />
+        <result column="treat_scale" property="treatScale" />
+        <result column="birth_scale" property="birthScale" />
+        <result column="hurt_scale" property="hurtScale" />
+        <result column="unemployment_scale" property="unemploymentScale" />
+        <result column="funds_scale" property="fundsScale" />
+    </resultMap>
+
+</mapper>

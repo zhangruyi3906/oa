@@ -1,0 +1,40 @@
+--- # 注册中心
+spring:
+  cloud:
+    nacos:
+      server-addr: 192.168.2.200:8848
+      discovery:
+        namespace: ea6a3182-ca27-4593-8acd-7d86f7284837
+        metadata:
+          version: 1.0.0
+
+--- # 配置中心
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.2.200:8848
+        namespace: ea6a3182-ca27-4593-8acd-7d86f7284837
+        group: DEFAULT_GROUP
+        name: ${spring.application.name}
+        file-extension: yaml
+
+--- # 注册中心
+#spring:
+#  cloud:
+#    nacos:
+#      server-addr: 192.168.2.200:8848
+#      discovery:
+#        namespace:
+#        metadata:
+#          version: 1.0.0
+#--- # 配置中心
+#spring:
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: 192.168.2.200:8848
+#        namespace:
+#        group: DEFAULT_GROUP
+#        name: ${spring.application.name}
+#        file-extension: yaml

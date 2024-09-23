@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lh.oa.module.system.mapper.ContractMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lh.oa.module.system.dal.dataobject.contract.Contract">
+        <id column="id" property="id" />
+        <result column="type" property="type" />
+        <result column="category" property="category" />
+        <result column="customer_name" property="customerName" />
+        <result column="customer_id" property="customerId" />
+        <result column="contract_name" property="contractName" />
+        <result column="url" property="url" />
+        <result column="file_id" property="fileId" />
+        <result column="project_name" property="projectName" />
+        <result column="amount" property="amount" />
+        <result column="pay_schedule" property="paySchedule" />
+        <result column="pay_way" property="payWay" />
+        <result column="parent_id" property="parentId" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="deleted" property="deleted" />
+        <result column="tenant_id" property="tenantId" />
+        <result column="creator" property="creator" />
+        <result column="updater" property="updater" />
+    </resultMap>
+
+    <select id="selectByContractName" resultType="com.lh.oa.module.system.dal.dataobject.contract.Contract">
+        select * from contract where contract_name = #{contractName}
+
+    </select>
+
+</mapper>

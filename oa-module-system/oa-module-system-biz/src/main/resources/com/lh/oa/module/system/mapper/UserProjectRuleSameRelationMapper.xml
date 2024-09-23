@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lh.oa.module.system.mapper.UserProjectRuleSameRelationMapper">
+
+    <update id="batchDeleteByIds" parameterType="java.lang.Integer">
+        UPDATE user_project_rule_same_relation SET deleted = 1 WHERE id IN
+        <foreach collection="ids" separator="," item="id" open="(" close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <select id="selectHireUserPage" resultType="com.lh.oa.module.system.full.entity.attandance.UserProjectRuleSameRelation">
+        SELECT
+            relation.user_id,
+            relation.same_rule_project_ids
+        FROM
+            user_project_rule_same_relation AS relation
+            JOIN user_information AS info ON info.deleted = 0 AND info.user_id = relation.user_id AND info.hire_date &lt;= #{hireDate}
+        WHERE
+            relation.deleted = 0
+            <if test="userIds != null and userIds.size != 0">
+                AND relation.user_id IN
+                <foreach collection="userIds" item="userId" open="(" close=")" separator=",">
+                    #{userId}
+                </foreach>
+            </if>
+        ORDER BY
+            relation.user_id DESC
+        <if test="pageSize != 0">
+            LIMIT #{page}, #{pageSize}
+        </if>
+    </select>
+
+    <select id="selectHireUserCount" resultType="java.lang.Integer">
+        SELECT
+            COUNT(*)
+        FROM
+            user_project_rule_same_relation AS relation
+            JOIN user_information AS info ON info.deleted = 0 AND info.user_id = relation.user_id AND info.hire_date &lt;= #{hireDate}
+        WHERE
+            relation.deleted = 0
+            <if test="userIds != null and userIds.size != 0">
+                AND relation.user_id IN
+                <foreach collection="userIds" item="userId" open="(" close=")" separator=",">
+                    #{userId}
+                </foreach>
+            </if>
+    </select>
+
+</mapper>

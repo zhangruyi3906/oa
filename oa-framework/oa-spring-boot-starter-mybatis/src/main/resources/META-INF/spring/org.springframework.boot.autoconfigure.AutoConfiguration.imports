@@ -1,0 +1,2 @@
+com.lh.oa.framework.datasource.config.OaDataSourceAutoConfiguration
+com.lh.oa.framework.mybatis.config.OaMybatisAutoConfiguration

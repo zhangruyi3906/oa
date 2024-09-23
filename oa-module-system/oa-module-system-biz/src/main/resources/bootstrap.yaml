@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: system-server
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+
+logging:
+  file:
+    name: /home/oa/logs/${spring.application.name}.log

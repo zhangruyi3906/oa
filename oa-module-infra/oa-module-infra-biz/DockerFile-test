@@ -1,0 +1,7 @@
+FROM java:8
+VOLUME /tmp
+COPY target/oa-module-infra-biz.jar oa-module-infra-biz.jar
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN bash -c "touch /oa-module-infra-biz.jar"
+ENTRYPOINT ["java", "-jar", "-Xms128m", "-Xmx512m", "oa-module-infra-biz.jar", "--spring.profiles.active=test"]

@@ -1,0 +1,35 @@
+--- # 注册中心
+spring:
+  cloud:
+    nacos:
+      server-addr: 47.109.89.50:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: ea6a3182-ca27-4593-8acd-7d86f7284837
+        metadata:
+          version: 1.0.0
+
+--- # 配置中心
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 47.109.89.50:8848
+        username: nacos
+        password: nacos
+        namespace: ea6a3182-ca27-4593-8acd-7d86f7284837
+        group: DEFAULT_GROUP
+        name: ${spring.application.name}
+        file-extension: yaml
+
+post:
+  sale:
+    platform-url: https://postsale.tunnelprj.com/api
+    access_token: /auth/token
+    username: admin
+    password: lanhai882023
+    grant_type: oa_token_password
+    client: OA
+    sync-user: /oa/user
+    todo-message: /api/task/todo/message

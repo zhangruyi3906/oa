@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lh.oa.module.system.mapper.CompanyCarMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lh.oa.module.system.api.companyCar.CompanyCar">
+        <id column="id" property="id"/>
+        <result column="plate_number" property="plateNumber"/>
+        <result column="brand" property="brand"/>
+        <result column="model" property="model"/>
+        <result column="color" property="color"/>
+        <result column="type" property="type"/>
+        <result column="purchase_date" property="purchaseDate"/>
+        <result column="policy_number" property="policyNumber"/>
+        <result column="car_condition" property="carCondition"/>
+        <result column="dept_id" property="deptId"/>
+        <result column="dept_name" property="deptName"/>
+        <result column="project_id" property="projectId"/>
+        <result column="project_name" property="projectName"/>
+        <result column="status" property="status"/>
+        <result column="deleted" property="deleted"/>
+        <result column="tenant_id" property="tenantId"/>
+
+    </resultMap>
+
+    <select id="free" resultType="com.lh.oa.module.system.api.companyCar.CompanyCar">
+        select * from company_car where status = 0
+    </select>
+
+</mapper>
